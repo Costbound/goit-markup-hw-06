@@ -19,7 +19,6 @@ h3 {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
-    text-align: center;
     letter-spacing: 0.02em;
     color: #2e2f42;
 }
@@ -30,7 +29,6 @@ h3 {
 }
 a {
     text-decoration: none;
-    color: #2E2F42;
     display: block;
 }
 h1, h2, h3, p {
@@ -68,7 +66,6 @@ img {
 }
 .container {
     margin: 0 auto;
-    padding: 0 16px;
 }
 .close-btn {
     display: flex;
@@ -104,7 +101,6 @@ img {
    position: absolute;
    width: 1px;
    height: 1px;
-   margin: -1px;
    border: 0;
    padding: 0;
    white-space: nowrap;
@@ -124,9 +120,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     max-width: none;
-    padding: 0 16px;
 }
 
 .logo {
@@ -140,6 +134,9 @@ img {
     text-transform: uppercase;
 }
 .logo .logo-span {
+    color:#2E2F42 ;
+}
+.navigation-link {
     color:#2E2F42 ;
 }
 .contacts {
@@ -163,23 +160,23 @@ img {
 
 /* ---------------------------------------------------1st section Order---------------------------------------------------*/
 .section-request {
-    padding: 72px 0;
     background-color: #2E2F42;
-    background-image:linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
+    background-image:linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 1440px;         
     margin: 0 auto;          
     background-position: center;    
 }
+@media (min-resolution: 192dpi) {
+    .section-request {
+        background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/bg@2x.jpg);
+    }
+}
 .request-title {
     color:#FFF;
     text-align: center;
-    font-size: 36px;
-    line-height: 1.111;
-    letter-spacing: 0.05em;
     text-transform: capitalize;
-    margin-bottom: 72px;
 }
 .request-button {
     box-shadow: 0 4px 4px #00000026;
@@ -189,20 +186,9 @@ img {
 }
 
 /* ---------------------------------------------------2nd section Principles--------------------------------------------------- */
-.principles-item-icon-container {
-    display: none;
-}
 .principles-title {
-    text-align: center;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.111;
-    letter-spacing: 0.05em;
     text-transform: capitalize;
     margin-bottom: 8px;
-}
-.principles-para {
-    font-weight: 500;
 }
 
 /* ---------------------------------------------------3rd section Our Team--------------------------------------------------- */
@@ -211,7 +197,6 @@ img {
 }
 .team-title {
     text-transform: capitalize;
-    text-align: center;
     margin-bottom: 72px;
 }
 .team-list-item {
@@ -228,6 +213,7 @@ img {
     margin-bottom: 8px;
 }
 .team-names {
+    text-align: center;
     margin-bottom: 8px;
 }
 .team-list-container {
@@ -293,7 +279,7 @@ img {
 /* ---------------------------------------------------Footer--------------------------------------------------- */
 .footer {
     background-color: #2E2F42;
-    padding: 96px 16px;
+    padding: 96px 0;
 }
 .footer-logo {
     margin-bottom: 17.5px;
@@ -588,9 +574,16 @@ img {
 
 
 /* ===========================================REQUEST================================================ */
+    .section-request {
+        padding: 72px 0;
+    }
     .request-title {
         width: 288px;
         padding: 0 25px;
+        font-size: 36px;
+        line-height: 1.111;
+        letter-spacing: 0.05em;
+        margin-bottom: 72px;    
     }
 /* =====================================================PRINCPLES======================================== */
     .principles-item:not(:last-child) {
@@ -649,19 +642,37 @@ img {
     .section {
         padding: 96px 0;
     }    
+    .container {
+        padding: 0 16px;
+    }
 /* ==========================================HEADER===================================== */
+.header-container {
+    width: 100%;
+    padding: 0 16px;
+}
 .contacts-list-item:not(:last-child) {
     margin-bottom: 12px;
 }
+/* ==========================================================PRINCIPLES============================================ */
+.principles-item-icon-container {
+    display: none;
+}
+.principles-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.111;
+    letter-spacing: 0.05em;
+}
+.principles-para {
+    font-weight: 500;
+}
+
 
 /* =============================================FOOTER============================================ */
 }
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 @media (min-width: 768px) {
-    .section {
-        padding: 120px 0;
-    }
     /* ----------------------------------HEADER------------------------------------- */
     .header-menu-link {
         display: none;
@@ -703,15 +714,11 @@ img {
         flex-grow: 1;
     }
     /* ----------------------------------------------REQUEST-------------------------------------------------- */
-    .section-request {
-        padding: 112px 0;
-    }
     .request-title{
         width: 496px;
         font-size: 56px;
         line-height: 1.07;
         letter-spacing: 0.02em;
-        margin-bottom: 36px;
     }
     /* --------------------------------PRINCIPLES---------------------------------------------- */
     .principles-list {
@@ -719,7 +726,6 @@ img {
         justify-content: center;
         flex-direction: row;
         gap: 72px 24px;
-        flex-wrap: wrap;
     }
     .principles-item{
         width: calc((100% - 24px) / 2);
@@ -732,27 +738,16 @@ img {
     .team-list {
         display: flex;
         gap: 64px 24px;
-        flex-wrap: wrap;
-        padding-left: calc((100% - 264px * 2 - 24px) / 2);
-        padding-right: calc((100% - 264px * 2 - 24px) / 2);
     }
 
     /* ------------------------------------------------PORTFOLIO----------------------------------------------- */
-    .portfolio-container {
-        padding: 0;
-    }
     .portfolio-list {
         display: flex;
         flex-wrap: wrap;
         gap: 72px 24px;
-        padding-left: calc((100% - 360px * 2 - 24px) / 2);
-        padding-right: calc((100% - 360px * 2 - 24px) / 2);
     }    
 
     /* --------------------------------------------------FOOTER----------------------------------------------------- */
-    .footer {
-        padding: 96px 0;
-    }
     .footer-container {
         display: flex;
         align-items: baseline;
@@ -776,18 +771,44 @@ img {
         gap: 24px;
     }   
 }
+@media (min-width: 768px) and (max-width: 1157px) {
+/* REQUEST */
+    .section-request {
+        padding: 112px 0;
+    }
+    .request-title {
+        margin-bottom: 36px;
+    }
+/* PRINCIPLES */
+    .principles-list {
+        flex-wrap: wrap;
+    }
+/* TEAM */
+    .team-list {
+        flex-wrap: wrap;
+        padding-left: calc((100% - 264px * 2 - 24px) / 2);
+        padding-right: calc((100% - 264px * 2 - 24px) / 2);
+    }
+/* PORTFOLIO */
+    .portfolio-container {
+        padding: 0;
+    }
+    .portfolio-list {
+        padding-left: calc((100% - 360px * 2 - 24px) / 2);
+        padding-right: calc((100% - 360px * 2 - 24px) / 2);
+    }
 
+}
 
 @media (min-width: 1158px) {
+    .section {
+        padding: 120px 0;
+    }
     .container {
         width: 1158px;
         padding: 0 15px;
-        margin: 0 auto;
     }
     /* -----------------------------------HEADER------------------------------------------------------- */
-    .header-container {
-        display: flex;
-    }
     .contacts-list {
         display: flex;
         align-items: center;
@@ -818,7 +839,6 @@ img {
     /* ------------------------------------------------------------TEAM------------------------------------------------- */
     .team-list {
         flex-wrap: nowrap;
-        padding: 0;
     }
 
     /* -----------------------------------------PORTFOLIO---------------------------------------------- */
